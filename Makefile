@@ -1,4 +1,4 @@
-assets = .init.lua index.lua empty.html
+assets = .init.lua index.lua wiki.html
 
 .PHONY: build clean
 
@@ -14,8 +14,8 @@ redbean.com:
 zip.com:
 	curl https://redbean.dev/zip.com >zip.com
 
-empty-5.2.2.html:
-	curl https://tiddlywiki.com/empty.html >empty.html
+wiki.html:
+	curl https://tiddlywiki.com/empty.html >wiki.html
 
 clean:
 	del wiki.com \

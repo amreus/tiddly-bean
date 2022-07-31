@@ -11,7 +11,7 @@ if GetHostOs() == 'WINDOWS' then
     if err then
         if err:name() == "ENOENT" then
             -- write embeded html file to disc
-            assert(Barf(WIKI_PATH, Slurp("/zip/empty.html")))
+            assert(Barf(WIKI_PATH, Slurp("/zip/wiki.html")))
         else
             print("An error occured.\n"..err)
             os.exit()

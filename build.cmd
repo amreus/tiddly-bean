@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set ASSETS=.init.lua index.lua empty.html
+set ASSETS=.init.lua index.lua wiki.html
 
 echo Checking for redbean.com...
 if not exist redbean.com (
@@ -11,10 +11,10 @@ if not exist redbean.com (
 echo OK
 
 
-echo Checking for empty.html...
-if not exist empty.html (
+echo Checking for wiki.html...
+if not exist wiki.html (
     echo Fetching wiki...
-    curl https://tiddlywiki.com/empty.html >empty.html
+    curl https://tiddlywiki.com/empty.html >wiki.html
 )
 echo OK
 
