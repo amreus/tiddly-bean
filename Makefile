@@ -3,7 +3,7 @@ assets = .init.lua index.lua wiki.html
 .PHONY: build clean
 
 build: wiki.com $(assets)
-	zip wiki.com $(assets)
+	./zip.com wiki.com $(assets)
 
 wiki.com: redbean.com zip.com
 	copy redbean.com wiki.com
