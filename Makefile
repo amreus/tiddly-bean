@@ -1,4 +1,4 @@
-assets = .init.lua index.lua wiki.html
+assets = .args .init.lua index.lua wiki.html
 
 .PHONY: build clean
 
