@@ -1,7 +1,9 @@
--- adapted from https://rpdillon.net/redbean-tiddlywiki-saver.html (StoreAsset didn't work)
+-- Adapted from
+--   https://rpdillon.net/redbean-tiddlywiki-saver.html
+-- and
+--   https://gist.github.com/coderofsalvation/f9e22cef04222bca03f7bc342b2a0a2c
 
 method = GetMethod()
-
 if method == "GET" then
     ServeAsset(WIKI_PATH)
 elseif method == "HEAD" then
@@ -11,7 +13,7 @@ elseif method == "HEAD" then
     SetHeader("Content-Length", tostring(#wiki))
 elseif method == "OPTIONS" then
     SetStatus(200)
-    SetHeader("allow", "GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav")
+    SetHeader("Allow", "GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav")
     SetHeader("x-api-access-type", "file")
     SetHeader("dav", "tw5/put")   
 elseif method == "PUT" then
@@ -22,5 +24,6 @@ elseif method == "PUT" then
     else
         StoreAsset(WIKI_PATH, GetBody())
     end
-    SetStatus(200)
+    SetStatus(204, "No Content")
 end
+

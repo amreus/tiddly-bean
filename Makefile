@@ -1,11 +1,15 @@
-assets = .args .init.lua index.lua wiki.html
+assets = .args .init.lua index.lua
+wiki = wiki.html
 
-.PHONY: build clean
+.PHONY: dist clean download update
 
-build: wiki.com $(assets)
+update: wiki.com zip.com $(assets)
 	./zip.com wiki.com $(assets)
 
-wiki.com: redbean.com zip.com
+dist: wiki.com zip.com $(assets) $(wiki)
+	./zip.com wiki.com $(assets) $(wiki)
+
+wiki.com: redbean.com
 	copy redbean.com wiki.com
 
 redbean.com:
@@ -17,11 +21,9 @@ zip.com:
 wiki.html:
 	curl https://tiddlywiki.com/empty.html >wiki.html
 
-clean:
-	del wiki.com \
-		wiki.exe \
-		zip.com \
-		redbean.com \
-		err \
-		*.log
+download: redbean.com zip.com wiki.html
+	curl https://redbean.dev/redbean-latest.com >redbean.com
+	curl https://tiddlywiki.com/empty.html >wiki.html
+	curl https://redbean.dev/zip.com >zip.com
 
+clean:
