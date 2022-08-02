@@ -1,3 +1,6 @@
+<style type="text/css">body{margin:40px
+auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
 # tiddly-bean
 
 Experiments with a [redbean](https://redbean.dev) TiddlyWiki server
@@ -7,18 +10,17 @@ Experiments with a [redbean](https://redbean.dev) TiddlyWiki server
 These files build a server for single-file
 [Tiddlywiki](https://tiddlywiki.com).
 
-Type `build` or `make` to create the `wiki.com` executable.
+Type `build` or `make dist` to create the `wiki.com` executable.
 
 
 Running `wiki.com` starts the server and opens your default browser to your
 wiki. 
 
-On Linux and Macs, the wiki is served from and saved to inside the executable -
-so a self-contained wiki with server. The `-*` flag must be used to enable the
-self-modifying executable.
+On Linux and Macs, the wiki is embeded in the executable -
+so a self-contained wiki with server.
 
-On Windows, the embeded wiki file is written to disc as `wiki.html`, and is
-served and saved to disk. This is because `redbean` does not currently support
+On Windows, the embeded wiki file is first written to disc as `wiki.html`, and is
+saved back to disk. This is because `redbean` does not currently support
 updating the wiki file inside the executable on Windows.
 
 
