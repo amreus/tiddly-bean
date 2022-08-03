@@ -20,6 +20,10 @@ On Windows, the embeded wiki file is first written to disc as `wiki.html`, and
 is saved back to disk. This is because `redbean` does not currently support
 updating the wiki file inside the executable on Windows.
 
+To use an existing tiddlywiki, replace the `wiki.html` file in the executable using the `zip` utility.
+
+* First copy the exsiting wiki to `wiki.html`
+* Then enter on the command line: `zip wiki.com wiki.html`
 
 
 Credits to [Rick Dillon](https://rpdillon.net/redbean-tiddlywiki-saver.html)
