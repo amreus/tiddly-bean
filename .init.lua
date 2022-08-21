@@ -1,6 +1,11 @@
---for k, v in ipairs(arg) do
---	print(k, v)
---end
+ProgramLogPath("redbean.log")
+
+print("arg:")
+for k, v in ipairs(arg) do
+    print(k, v)
+end
+
+print("Press ctrl-d to exit server.")
 
 -- Configures Cache-Control and Expires header generation for static asset serving.
 -- Zero means don't cache.
@@ -12,7 +17,10 @@ if GetHostOs() == 'WINDOWS' then
     -- Write the embeded html file to disk.
     local there = path.isfile(WIKI_PATH)
     if not there then
+        print("exporting emeded wiki file:", WIKI_PATH)
         assert(Barf(WIKI_PATH, Slurp("/zip/wiki.html")))
+    else
+        --print("serving from file "..WIKI_PATH)
     end
     -- serve from disc rather than embeded asset. Same as -D
     ProgramDirectory(".")
