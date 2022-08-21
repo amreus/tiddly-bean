@@ -24,7 +24,7 @@ wiki.html:
 	curl https://tiddlywiki.com/empty.html >wiki.html
 
 download: redbean.com zip.com wiki.html
-	curl https://redbean.dev/redbean-latest.com >redbean.com
+	curl https://redbean.dev/redbean-tiny-2.0.16.com >redbean.com
 	curl https://tiddlywiki.com/empty.html >wiki.html
 	curl https://redbean.dev/zip.com >zip.com
 

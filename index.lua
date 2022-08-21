@@ -13,14 +13,12 @@ elseif method == "HEAD" then
     SetHeader("Content-Length", tostring(#wiki))
 elseif method == "OPTIONS" then
     SetStatus(200)
-    SetHeader("Allow", "GET,HEAD,POST,OPTIONS,CONNECT,PUT,DAV,dav")
-    SetHeader("x-api-access-type", "file")
-    SetHeader("dav", "tw5/put")   
+    SetHeader("Allow", "GET,HEAD,OPTIONS,PUT,DAV")
+    SetHeader("dav", "1")   
 elseif method == "PUT" then
-    length = tonumber(GetHeader("Content-Length"))
     if GetHostOs() == "WINDOWS" then
         local ok, err = Barf(WIKI_PATH, GetBody())
-        if err then printf("could not save:", err) end
+        if err then printf("could not save wiki:", err) end
     else
         StoreAsset(WIKI_PATH, GetBody())
     end

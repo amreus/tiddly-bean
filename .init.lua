@@ -1,3 +1,7 @@
+--for k, v in ipairs(arg) do
+--	print(k, v)
+--end
+
 -- Configures Cache-Control and Expires header generation for static asset serving.
 -- Zero means don't cache.
 ProgramCache(0)
